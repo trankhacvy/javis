@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #javis-container {
+    @apply jv-text-gray-800;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply jv-text-white jv-bg-primary-500 hover:jv-bg-primary-600 focus:jv-ring-4 focus:jv-ring-primary-300 jv-font-medium jv-rounded-lg jv-text-sm jv-px-5 jv-py-2.5 dark:jv-bg-primary-600 dark:hover:jv-bg-primary-700 focus:jv-outline-none dark:focus:jv-ring-primary-800;
+  }
+
+  .input {
+    @apply jv-bg-white jv-border jv-border-gray-300 jv-text-sm jv-rounded-lg focus:jv-ring-primary-500 focus:jv-border-primary-500 jv-block jv-p-2.5 dark:jv-bg-gray-700 dark:jv-border-gray-600 dark:jv-placeholder-gray-400 dark:jv-text-white dark:focus:jv-ring-primary-500 dark:focus:jv-border-primary-500;
+  }
+}

@@ -1,0 +1,8 @@
+@import url("../assets/styles/tailwind.css");
+
+@layer base {
+  body {
+    @apply jv-text-base jv-text-gray-800 jv-antialiased;
+    font-family: "Poppins", sans-serif;
+  }
+}
