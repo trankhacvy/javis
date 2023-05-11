@@ -28,7 +28,7 @@ const manifest: Manifest.WebExtensionManifest = {
   content_scripts: [
     {
       matches: ["http://*/*", "https://*/*", "<all_urls>"],
-      js: ["src/content/index.ts", "src/ui/index.tsx"],
+      js: ["src/ui/index.tsx"],
       css: ["contentStyle.css"],
       run_at: "document_end",
     },

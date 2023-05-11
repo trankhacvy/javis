@@ -1,5 +1,9 @@
 @import url("../assets/styles/tailwind.css");
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 @layer components {
   .btn-bubble {
     @apply jv-relative jv-bg-primary-500 !jv-z-[9999] hover:jv-bg-primary-700 jv-w-6 jv-h-6 jv-rounded-full jv-text-white jv-transition active:jv-scale-90 jv-shadow-button;

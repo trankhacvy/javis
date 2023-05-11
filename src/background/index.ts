@@ -11,11 +11,11 @@ chrome.runtime.onInstalled.addListener(() => {
   //   id: "chatGptMenuId",
   // });
 
-  if (chrome.runtime.openOptionsPage) {
-    chrome.runtime.openOptionsPage();
-  } else {
-    window.open(chrome.runtime.getURL("src/options/index.html"));
-  }
+  // if (chrome.runtime.openOptionsPage) {
+  //   chrome.runtime.openOptionsPage();
+  // } else {
+  //   window.open(chrome.runtime.getURL("src/options/index.html"));
+  // }
 });
 
 let javis: Javis;

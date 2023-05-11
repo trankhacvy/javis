@@ -8,7 +8,7 @@ let commands: Command[] = [];
 chrome.storage.local.get("commands").then((result) => {
   commands = result.commands;
 });
-console.log("commands", commands);
+
 let selected = false;
 let prevSelectionStr = "";
 let selectionTimeout: NodeJS.Timeout | null = null;
@@ -79,7 +79,9 @@ const handleUserSelection = (selection: Selection) => {
 };
 
 const handleUserUnselect = () => {
-  const rootContainer = document.getElementById(ElementIds.BubbleButtonContainer);
+  const rootContainer = document.getElementById(
+    ElementIds.BubbleButtonContainer
+  );
   if (rootContainer) {
     if (rootContainer.remove) {
       rootContainer.remove();
@@ -89,7 +91,7 @@ const handleUserUnselect = () => {
   }
 };
 
-chrome.runtime.onMessage.addListener(function (request, _, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, _) {
   if (request.type === "SHOW_MODAL") {
     const { message } = request;
     const rootContainer = document.querySelector("#javis-extension-container");
@@ -100,5 +102,13 @@ chrome.runtime.onMessage.addListener(function (request, _, sendResponse) {
         <JavisDialogContaner commands={commands} selectionText={message} />
       </StrictMode>
     );
+  }
+});
+
+chrome.runtime.onMessage.addListener(function (request) {
+  if (request.type === "TAB_UPDATED") {
+    const container = document.createElement("div");
+    container.id = "javis-extension-container";
+    document.body.appendChild(container);
   }
 });

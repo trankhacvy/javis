@@ -2,7 +2,7 @@ import { Command } from "@src/types";
 
 const EditOrReviewCommands: Command[] = [
   {
-    icon: "PenTool",
+    icon: "Wand",
     name: "Improve writing",
     group: "Edit or review selection",
     needSelection: true,
@@ -11,7 +11,7 @@ const EditOrReviewCommands: Command[] = [
     keys: ["text"],
   },
   {
-    icon: "PenTool",
+    icon: "Check",
     name: "Fix spelling & grammar",
     group: "Edit or review selection",
     needSelection: true,
@@ -20,7 +20,7 @@ const EditOrReviewCommands: Command[] = [
     keys: ["text"],
   },
   {
-    icon: "PenTool",
+    icon: "SignalLow",
     name: "Make shorter",
     group: "Edit or review selection",
     needSelection: true,
@@ -29,7 +29,7 @@ const EditOrReviewCommands: Command[] = [
     keys: ["text"],
   },
   {
-    icon: "PenTool",
+    icon: "SignalHigh",
     name: "Make longer",
     group: "Edit or review selection",
     needSelection: true,
@@ -38,7 +38,7 @@ const EditOrReviewCommands: Command[] = [
     keys: ["text"],
   },
   {
-    icon: "PenTool",
+    icon: "Mic2",
     name: "Change tone to",
     group: "Edit or review selection",
     needSelection: true,
@@ -54,7 +54,7 @@ const EditOrReviewCommands: Command[] = [
     ],
   },
   {
-    icon: "PenTool",
+    icon: "Box",
     name: "Simplify language",
     group: "Edit or review selection",
     needSelection: true,
@@ -66,7 +66,7 @@ const EditOrReviewCommands: Command[] = [
 
 const GenerateFromSelectionCommands: Command[] = [
   {
-    icon: "PenTool",
+    icon: "ListOrdered",
     name: "Summarize",
     group: "Generate from selection",
     needSelection: true,
@@ -75,23 +75,28 @@ const GenerateFromSelectionCommands: Command[] = [
     keys: ["text"],
   },
   {
-    icon: "PenTool",
+    icon: "Languages",
     name: "Translate",
     group: "Generate from selection",
     needSelection: true,
     template:
-      "Translate the following paragraph to the corrected and improved version of my text, in vietnamese. Keep the meaning same, but make them more literary. The paragraph is: {text}",
-    keys: ["text"],
+      "Translate the following paragraph to the corrected and improved version of my text, in {language}. Keep the meaning same, but make them more literary. The paragraph is: {text}",
+    keys: ["language", "text"],
     options: [
-      { text: "Professional", prompt: "professional" },
-      { text: "Casual", prompt: "casual" },
-      { text: "Straightforward", prompt: "straightforward" },
-      { text: "Confident", prompt: "confident" },
-      { text: "Friendly", prompt: "friendly" },
+      { text: "English", prompt: "English" },
+      { text: "Chinese", prompt: "Chinese" },
+      { text: "Spanish", prompt: "Spanish" },
+      { text: "French", prompt: "French" },
+      { text: "Arabic", prompt: "Arabic" },
+      { text: "Russian", prompt: "Russian" },
+      { text: "Portuguese", prompt: "Portuguese" },
+      { text: "Indonesian", prompt: "Indonesian" },
+      { text: "Japanses", prompt: "Japanses" },
+      { text: "Vietnamese", prompt: "Vietnamese" },
     ],
   },
   {
-    icon: "PenTool",
+    icon: "HelpCircle",
     name: "Explain this",
     group: "Generate from selection",
     needSelection: true,
