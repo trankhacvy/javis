@@ -1,4 +1,4 @@
-import { Javis } from "./ai";
+import { Javis } from "./api";
 import { commandList } from "./commands";
 import { v4 } from "uuid";
 
@@ -11,11 +11,11 @@ chrome.runtime.onInstalled.addListener(() => {
   //   id: "chatGptMenuId",
   // });
 
-  // if (chrome.runtime.openOptionsPage) {
-  //   chrome.runtime.openOptionsPage();
-  // } else {
-  //   window.open(chrome.runtime.getURL("src/options/index.html"));
-  // }
+  if (chrome.runtime.openOptionsPage) {
+    chrome.runtime.openOptionsPage();
+  } else {
+    window.open(chrome.runtime.getURL("src/options/index.html"));
+  }
 });
 
 let javis: Javis;

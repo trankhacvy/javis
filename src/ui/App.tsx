@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import styles from "@ui/styles.css?inline";
 import ShadowRoot from "react-shadow";
-import { Command, ElementIds } from "@src/types";
+import { Command } from "@src/types";
+import { ElementIds } from "@src/constants";
 import { JavisPopover } from "./components/JavisPopover";
 import { JavisDialog } from "./components/JavisDialog";
 
@@ -14,9 +15,8 @@ type BubbleButtonProps = {
 export const BubbleButton = ({ top, left, onClick }: BubbleButtonProps) => {
   return (
     <ShadowRoot.div id={ElementIds.BubbleButtonContainer}>
-      <button
-        className="javis-extension-button jv-animate-bounce"
-        onClick={onClick}
+      <div
+        className="jv-absolute"
         style={
           location
             ? {
@@ -26,8 +26,13 @@ export const BubbleButton = ({ top, left, onClick }: BubbleButtonProps) => {
             : { right: "20px", top: "20px" }
         }
       >
-        ⌘
-      </button>
+        <button className="btn-bubble" onClick={onClick}>
+          <img
+            src={chrome.runtime.getURL("icon-48.png")}
+            className="jv-w-full jv-h-full jv-object-cover"
+          />
+        </button>
+      </div>
       <style type="text/css">{styles}</style>
     </ShadowRoot.div>
   );
@@ -72,7 +77,7 @@ export const JavisPopoverContaner = ({
   }, [commands, selection]);
 
   return (
-    <ShadowRoot.div id={ElementIds.BubbleButtonContainer}>
+    <ShadowRoot.div id={ElementIds.InlinePopupContainer}>
       <JavisPopover
         commands={groupedCommands}
         selectionText={selection}
@@ -141,7 +146,7 @@ export const JavisDialogContaner = ({
   }, [commands, selectionText]);
 
   return (
-    <ShadowRoot.div id={ElementIds.BubbleButtonContainer}>
+    <ShadowRoot.div id={ElementIds.DialogContainer}>
       <JavisDialog commands={groupedCommands} selectionText={selectionText} />
 
       <style type="text/css">{styles}</style>

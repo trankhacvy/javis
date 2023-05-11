@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   prefix: "jv-",
-  darkMode: 'class',
+  darkMode: "class",
   // important: true,
   theme: {
     extend: {
@@ -23,6 +23,7 @@ module.exports = {
       },
       boxShadow: {
         card: "0px 0px 2px rgba(145, 158, 171, 0.2), 0px 12px 24px -4px rgba(145, 158, 171, 0.12)",
+        button: "0 6px 10px 0 rgba(0, 0, 0, 0.3)",
         "card-dark":
           "0px 0px 2px rgba(0, 0, 0, 0.2), 0px 12px 24px -4px rgba(0, 0, 0, 0.12)",
         dialog: "-40px 40px 80px -8px rgba(145, 158, 171, 0.24)",
@@ -39,6 +40,7 @@ module.exports = {
       },
       animation: {
         slide: "slide 250ms ease-in",
+        "ping-slow": "ping-slow 1.5s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
       keyframes: {
         slide: {
@@ -59,6 +61,12 @@ module.exports = {
           },
           "50%, 100%": {
             opacity: "0.15",
+          },
+        },
+        "ping-slow": {
+          "50%, 100%": {
+            transform: "scale(1.5)",
+            opacity: "0",
           },
         },
       },

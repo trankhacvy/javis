@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BubbleButton, JavisPopoverContaner, JavisDialogContaner } from "./App";
 import { Command } from "@src/types";
+import { ElementIds } from "@src/constants";
 
 let commands: Command[] = [];
 chrome.storage.local.get("commands").then((result) => {
@@ -54,7 +55,7 @@ const handleUserSelection = (selection: Selection) => {
     const top =
       anchorOffset <= focusOffset
         ? rect.bottom + 8 + window.pageYOffset
-        : rect.top + window.pageYOffset - 48;
+        : rect.top + window.pageYOffset - 40;
     const left = rect.left;
 
     const handleButtonClick = () => {
@@ -78,7 +79,7 @@ const handleUserSelection = (selection: Selection) => {
 };
 
 const handleUserUnselect = () => {
-  const rootContainer = document.querySelector("#javis-container");
+  const rootContainer = document.getElementById(ElementIds.BubbleButtonContainer);
   if (rootContainer) {
     if (rootContainer.remove) {
       rootContainer.remove();
