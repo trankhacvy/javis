@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "description": "Your ultimate AI-assistant designed to revolutionize your web browsing experience.",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build -c vite.web.config.ts",
+    "build-ext": "vite build -c vite.config.ts",
     "dev": "nodemon",
     "web": "vite"
   },
