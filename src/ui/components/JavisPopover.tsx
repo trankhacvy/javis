@@ -114,7 +114,7 @@ const ChatView = ({ onBack }: ChatViewProps) => {
     // send message to background
     chrome.runtime.sendMessage({
       type: "SEND_COMMAND",
-      message: question,
+      prompt: question,
     });
     setTimeout(() => {
       if (containerRef && containerRef.current) {

@@ -97,12 +97,11 @@ const ChatView = ({ onBack }: ChatViewProps) => {
       type: "COMMAND",
       content: question,
     });
-    setQuestion("");
-    // send message to background
     chrome.runtime.sendMessage({
       type: "SEND_COMMAND",
       message: question,
     });
+    setQuestion("");
     setTimeout(() => {
       if (containerRef && containerRef.current) {
         containerRef.current.scrollTop = containerRef.current.scrollHeight;

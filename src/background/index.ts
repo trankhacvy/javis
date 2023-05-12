@@ -73,6 +73,9 @@ chrome.commands.onCommand.addListener(async (command) => {
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.type === "SEND_COMMAND") {
     handleSendCommand(request, sender);
+  } else if (request.type === "CLEAR_MEMORY") {
+    console.log("clear memory");
+    javis?.clearMemory();
   }
 });
 
